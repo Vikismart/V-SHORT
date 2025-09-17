@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shortly — URL Shortener</title>
+  <meta name="description" content="Shortly — simple, fast URL shortener.">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">Shortly</div>
+        <div class="tag">Short links. Big impact.</div>
+      </div>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Shorten, share and track links — instantly.</h1>
+          <p class="lead">Create short links in seconds. Copy and share anywhere. Your history is stored locally in your browser.</p>
+
+          <form id="shortenForm" class="shorten-form" autocomplete="off">
+            <input id="urlInput" name="url" type="url" placeholder="Paste a link to shorten (e.g. https://example.com)" required>
+            <button id="shortenBtn" type="submit" aria-label="Shorten link">Shorten It</button>
+          </form>
+
+          <div id="error" class="message error" role="alert" aria-live="polite" hidden></div>
+          <div id="success" class="message success" role="status" aria-live="polite" hidden></div>
+        </div>
+
+        <div class="hero-right">
+          <div class="preview-card">
+            <h3>Recent shortened links</h3>
+            <div id="history" class="history-list" aria-live="polite"></div>
+            <div class="history-actions">
+              <button id="clearHistory" class="btn btn-ghost">Clear History</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Fast & Free</h3>
+          <p>Shorten links using a fast public API. No account required.</p>
+        </div>
+        <div class="card">
+          <h3>Local History</h3>
+          <p>Your shortened links are stored in your browser (localStorage) for easy access.</p>
+        </div>
+        <div class="card">
+          <h3>Copy with a click</h3>
+          <p>Copy the shortened link to your clipboard with a single click.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section container">
+      <h2>How it works</h2>
+      <ol class="how-list">
+        <li>Paste a URL and hit <strong>Shorten It</strong>.</li>
+        <li>The app calls a public shortening API and returns a short link.</li>
+        <li>Click <strong>Copy</strong> to copy the short URL, or click the link to open it.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Shortly — Built with HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
